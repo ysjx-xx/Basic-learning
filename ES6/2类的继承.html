@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Father{
+            // constructor(x,y){
+            //     this.x=x
+            //     this.y=y
+            // }
+            say1(){
+                return '我是爸爸';
+            }
+            // sum(){
+            //     console.log(this.x+this.y); 
+            // }
+            // money(){
+            //     console.log(100);
+            // }
+        }
+        class Son extends Father{
+            // constructor(x,y){
+            //     super(x,y)
+            // }
+            say(){
+                console.log(super.say1() + '的儿子');
+            }
+
+        }
+        var son=new Son()
+        // son.money()
+        // son.sum()
+        son.say()
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

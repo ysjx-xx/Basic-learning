@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tru {
+            border: greenyellow 1px solid;
+        }
+
+        .fal {
+            border: red 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" class="">
+    <button>提交</button>
+    <script>
+        var admin = document.querySelector('input')
+        var btn = document.querySelector('button')
+        var reg = /^[a-zA-Z0-9_-]{3,16}$/
+        btn.addEventListener('click', function () {
+            if (reg.test(admin.value)) {
+                admin.value = '';
+                admin.className = 'tru'
+                btn.innerHTML='提交成功'
+                btn.disabled=true
+            } else {
+                admin.className = 'fal'
+            }
+        })
+    </script>
+</body>
+
+</html>

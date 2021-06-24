@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //立即调用函数 window
+        (function(){
+            console.log("人生的巅峰");
+        })()
+        // 普通函数   this指向window
+        function fn(){
+            console.log("人生的巅峰");
+        }
+        fn();  fn.call();
+        //对象方法  该方法所属对象
+        var o={
+            sayHi:function(){
+                console.log("人生的巅峰");
+            }
+        }
+        o.sayHi()
+        //构造函数  实例对象，原型里的方法也指向实例对象
+        function Star(){
+
+        }
+        Star.prototype.say=function(){
+            console.log("人生的巅峰");
+        }
+        var star=new Star()
+        star.say()
+        //绑定事件函数 绑定事件对象
+        window.onkeyup=function(){
+            console.log("人生的巅峰");
+        }
+        //定时器函数 window
+        setTimeout(function(){
+            console.log("人生的巅峰");
+        },2000)
+        
+
+    </script>
+</body>
+</html>
