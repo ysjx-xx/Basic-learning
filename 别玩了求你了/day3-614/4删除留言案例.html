@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <textarea name="" id=""></textarea>
+    <button class="button1">发布</button>
+    <button class="button2">删除</button>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+
+        var ul = document.querySelector('ul');
+        var text = document.querySelector('textarea');
+        var btn1 = document.querySelector('.button1');
+        var btn2 = document.querySelector('.button2');
+        btn1.onclick = function () {
+            if (text.value == '') {
+                alert('还没输入');
+                return false;
+            }
+            else {
+                var lis = document.createElement('li');
+                lis.innerHTML = text.value;
+                ul.appendChild(lis);
+                text.value = '';
+                btn2.disabled = false;
+
+            }
+
+        }
+        btn2.onclick = function () {
+            if (ul.children.length == 0) {
+                btn2.disabled = true;
+            }
+            else {
+                ul.removeChild(ul.children[0]);
+            }
+
+        }
+    </script>
+</body>
+
+</html>

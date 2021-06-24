@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="l2"></div>
+    <div class="l1"></div>
+    
+    <script>
+        // var div1=document.querySelector('.l2')
+        // var div=document.querySelector('.l1')
+        // for(i=0;i<100000;i++){
+        //     var as=document.createElement('a')
+        // div.appendChild(as);
+        // }
+        // for(i=0;i<100000;i++){
+        //     var as=document.createElement('a')
+        //     as.innerHTML='<a href=""></a>'
+        //     div1.appendChild(as);
+        // }
+        var div1=document.querySelector('.l2')
+        var arr=[];
+        for(var i=0;i<100000;i++){
+            arr.push('<a href=""></a>')
+        }
+        div1.innerHTML=arr.join('');
+        
+    </script>
+</body>
+</html>

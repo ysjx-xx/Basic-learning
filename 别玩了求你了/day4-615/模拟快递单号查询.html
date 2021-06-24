@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            font-size: large;
+            width: 200px;
+            height: 50px;
+            border: 1px solid orange;
+            display:none;
+        }
+        input{
+            position: absolute;
+            
+            top: 50px;
+            
+            border: 1px solid orange;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <input type="text">
+    <script>
+        var div=document.querySelector('div');
+        var input=document.querySelector('input');
+        input.addEventListener('keyup',function(e){
+            if(e.keyCode!==''){
+                div.style.display='block';
+                div.innerHTML=input.value;
+            }
+            if(!input.value){
+                div.style.display='none'
+            }
+        })
+        input.addEventListener('blur',function(){
+            div.style.display='none';
+        })
+        input.addEventListener('focus',function(){
+            if(input.value){
+                div.style.display='block';
+            }
+            
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="but">点击获取当前时间</button>
+    <div id='div'>时间</div>
+    <p id="p">1</p>
+    <script>
+        var butt = document.querySelector('#but');
+        var div = document.querySelector('#div');
+        butt.onclick =function(){
+            div.innerText=we()
+        }
+         function we() {
+            var date = new Date()
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var data = date.getDate();
+            var xinqi = date.getDay();
+            var day = ['星期天','星期一','星期二','星期三','星期四','星期五','星期六']
+            var q = date.getHours();
+            var w = date.getMinutes();
+            var e = date.getSeconds();
+            var h = q < 10 ? '0' + q : q;
+            var m = w < 10 ? '0' + w : w;
+            var s = e < 10 ? '0' + e : e;
+            return year + '年' + month + '月' + data + '号'+day[xinqi]+'|'+ h + ':' + m + ':' + s;
+        }
+        var time=document.querySelector('p');
+        time.innerHTML=we()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 300px;
+            margin: 200px auto;
+        }
+
+        ul {
+            list-style: none;
+            
+        }
+
+        .l1 {
+            padding: 20px;
+            float: left;
+            height: 30px;
+        }
+        ul  li ul{
+            display: none;
+            border-left: orange 1px solid;
+            border-right: orange 1px solid;
+        }
+
+        ul li ul li {
+            text-align: center;
+            padding-top: 20px;
+            border-bottom: orange 1px solid;
+            
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        ul li a:hover {
+            color: burlywood;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div>
+        <ul class="uls">
+            <li class="l1"><a href="">微博</a>
+                <ul>
+                    <li>私信</li>
+                    <li>评论</li>
+                    <li>@我</li>
+                </ul>
+
+            </li>
+            <li class="l1"><a href="">博客</a>
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li class="l1"><a href="">邮箱</a>
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+
+            </li>
+        </ul>
+    </div>
+    <script>
+        var as=document.querySelector('.uls');
+        var lis=as.children;
+        for( var i=0;i<lis.length;i++){
+            lis[i].onmouseover=function(){
+                this.children[1].style.display='block'
+            }
+            lis[i].onmouseout=function(){
+                // this.children.style.display='none'
+                this.children[1].style.display='none'
+            }
+        }
+        
+    </script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

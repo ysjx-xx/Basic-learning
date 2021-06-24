@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            position: absolute;
+            top: 600px;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <button>111</button>
+    <div>
+        1
+    </div>
+    <script src=animateY.js>
+
+    </script>
+    <script>
+        var div=document.querySelector('div')
+        var btn=document.querySelector('button')
+btn.addEventListener('click',function(){
+    animate(div,0)
+})
+    </script>
+</body>
+</html>

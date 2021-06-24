@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d1{
+            width: 800px;
+            height: 800px;
+            background-color: rgb(184, 36, 36);
+            margin: 0 auto;
+        }
+        #d2{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(42, 42, 160);
+        }
+    </style>
+</head>
+<body>
+    <div id='d1'>
+        <div id="d2"></div>
+    </div>
+    <script>
+        var d1=document.querySelector('#d1')
+        var d2=document.querySelector('#d2')
+        d1.addEventListener('click',function(e){
+            alert('d1')
+            
+        })
+        d2.addEventListener('click',function(e){
+            alert('d2')
+            e.stopPropagation();
+        })
+        document.addEventListener('click',function(e){
+            alert('body')
+        })
+
+    </script>
+</body>
+</html>

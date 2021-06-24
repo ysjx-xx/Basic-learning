@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d1,
+        .d2,
+        .d3{
+            background-color: black;
+            float: left;
+            color: rgb(255, 255, 255);
+            
+
+        }
+    </style>
+</head>
+
+<body>
+    <button>停止计时</button>
+    <div>
+        <div class="d1"></div>
+        <div class="d2"></div>
+        <div class="d3"></div>
+    </div>
+    <script>
+        var inputTime = +new Date('2021-6-15 18:00:00')
+        fn();
+        function fn() {
+            var d1=document.querySelector('.d1')
+            var d2=document.querySelector('.d2')
+            var d3=document.querySelector('.d3')
+            date = new Date()
+            var nowtime = +new Date()
+            var listime = (inputTime - nowtime) / 1000;
+            var h1 = parseInt(listime / 60 / 60 % 24)
+             var h=h1<10? '0'+h1 : h1 ;
+            var m1 = parseInt(listime / 60 % 60)
+            var m=m1<10? '0'+m1 : m1 ;
+            var s1 = parseInt(listime % 60)
+            var s=s1<10? '0'+s1 : s1 ;
+            d1.innerHTML=h+':';
+            d2.innerHTML=m+':';
+            d3.innerHTML=s;
+        }
+        setInterval(fn,1000);
+        
+
+
+    </script>
+</body>
+
+</html>

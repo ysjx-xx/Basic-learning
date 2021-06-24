@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+
+</head>
+<button class="button1">点击粉色盒子开始动到400</button>
+<button class="button2">点击粉色盒子动到800</button>
+<div></div>
+
+<body>
+    <script>
+        var div = document.querySelector('div')
+        var btn1 = document.querySelector('.button1')
+        var btn2 = document.querySelector(".button2")
+        function animate(obj, target, callback) {
+            clearInterval(obj.timer)
+            obj.timer = setInterval(function () {
+                var step = (target - obj.offsetLeft) / 40;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.timer);
+                    //回调函数写到定时器结束后 
+                    if (callback) {
+                        callback();
+                    }
+                }
+                obj.style.left = obj.offsetLeft + step + 'px';
+            }, 15)
+        }
+        btn1.addEventListener('click', function () {
+            animate(div, 400)
+        })
+        btn2.addEventListener('click', function () {
+            animate(div, 800, function () {
+                div.style.backgroundColor = 'blue'
+
+            })
+        })
+
+
+
+
+
+    </script>
+</body>
+
+</html>

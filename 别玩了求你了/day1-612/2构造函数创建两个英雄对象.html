@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Hero(name,type,blood){
+            this.name=name;
+            this.type=type;
+            this.blood=blood;
+            this.attck=function attcks(attck){
+                console.log(attck);
+            }
+        }
+        var onehero=new Hero("廉颇","力量",'500')
+        var twohero=new Hero("后羿","射手",'100')
+        onehero.attck('他不懂')
+        console.log(onehero);
+        console.log();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

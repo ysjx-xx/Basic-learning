@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div><button id='p1'>1</button>
+    <button id='p2'>2</button>
+    <button id='p3'>3</button>
+    <button id='p4'>4</button>
+</div>
+    <img src="2.1.jpg" alt="">
+    <script>
+        var i1=document.getElementById('p1');
+        var i2=document.getElementById('p2');
+        var i3=document.getElementById('p3');
+        var i4=document.getElementById('p4');
+        var img=document.querySelector('img');
+        i1.onclick=function(){
+            img.src="2.1.jpg"
+        }
+        i2.onclick=function(){
+            img.src="2.2.jpg"
+        }
+        i3.onclick=function(){
+            img.src="2.3.jpg"
+        }
+        i4.onclick=function(){
+            img.src="2.4.jpg"
+        }
+    </script>
+
+
+</body>
+</html>
