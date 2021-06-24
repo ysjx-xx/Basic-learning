@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.js"></script>
+</head>
+<body>
+    
+        <!-- <span>
+            123
+        </span> -->
+
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    
+    <script>
+        // // $('div').html('1234')
+        // $('div').text('1234')
+        var arr=['red','blue','yellow']
+        var sum=0;
+        $("div").each(function(i,domEle){
+            $(domEle).css('color',arr[i])
+            sum+=parseInt($(domEle).text())
+            
+        })
+        console.log(sum);
+
+    </script>
+    
+</body>
+</html>
