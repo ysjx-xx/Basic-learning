@@ -1,0 +1,37 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "21061523",
+      "name": "拍照",
+      "font_class": "paizhao",
+      "unicode": "f456",
+      "unicode_decimal": 62550
+    },
+    {
+      "icon_id": "21061533",
+      "name": "发现",
+      "font_class": "faxian",
+      "unicode": "f45f",
+      "unicode_decimal": 62559
+    },
+    {
+      "icon_id": "21061542",
+      "name": "勋章",
+      "font_class": "xunzhang",
+      "unicode": "f468",
+      "unicode_decimal": 62568
+    },
+    {
+      "icon_id": "21061551",
+      "name": "分享",
+      "font_class": "fenxiang",
+      "unicode": "f471",
+      "unicode_decimal": 62577
+    }
+  ]
+}
