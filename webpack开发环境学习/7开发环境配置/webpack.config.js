@@ -1,7 +1,7 @@
 const { resolve } = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
-    entry: './src/js/index.js',
+    entry: ['./src/js/index.js','./src/index.html'],
     output: {
         filename: 'js/built.js',
         path: resolve(__dirname, 'build')
@@ -54,6 +54,9 @@ module.exports = {
         contentBase: resolve(__dirname, 'build'),
         compress: true,
         port: 8000,
-        open:true
-    }
-}
+        open:true,
+        //开启HMR功能
+        hot:true
+    },
+    devtool:'source-map'
+};
