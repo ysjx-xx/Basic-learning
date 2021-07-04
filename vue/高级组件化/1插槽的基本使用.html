@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./vue.js"></script>
+  </head>
+  <body>
+    <!-- 如果插槽没有默认值，cpn中的内容就是插槽内容，没有内容则为都为空
+    如果插槽有默认值，当cpn标签中没有内容时，显示插槽的默认值，有内容就显示内容
+    如果有多个标签，则全部显示 -->
+    <div id="app">
+      <cpn><button>按钮</button></cpn>
+      <cpn><p>p标签2</p></cpn>
+      <cpn><input type="text" /></cpn>
+      <cpn></cpn>
+      <cpn>
+        <div>我是div</div>
+        <p>我是p标签</p>
+        <span>我是span标签</span></cpn
+      >
+    </div>
+    <template id="cpn">
+      <div>
+        
+        <h2>我是组件</h2>
+        <slot></slot>
+      </div>
+    </template>
+    <script>
+      const cpn = {
+        template: "#cpn",
+      };
+      let app = new Vue({
+        el: "#app",
+        data: {},
+        components: {
+          cpn,
+        },
+      });
+    </script>
+  </body>
+</html>

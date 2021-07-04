@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <mycpn></mycpn>
+    </div>
+    <script>
+      //   原写法;
+      //   const cpnC = Vue.extend({
+      //     template: `<div>
+      //       <h1>标题111</h1>
+      //       <p>内容123123</p>
+      //   </div>`,
+      //   });
+      //   Vue.component("mycpn", cpnC);
+
+//       语法糖写法;
+//       Vue.component("mycpn", {
+//         template: `<div>
+//     <h1>标题111</h1>
+//     <p>内容123123</p>
+// </div>`,
+//       });
+
+      let app = new Vue({
+        el: "#app",
+        data: {},
+        components: {
+            mycpn:{
+        template: `<div>
+    <h1>标题111</h1>
+    <p>内容123123</p>
+</div>`,
+      }
+        },
+      });
+    </script>
+  </body>
+</html>

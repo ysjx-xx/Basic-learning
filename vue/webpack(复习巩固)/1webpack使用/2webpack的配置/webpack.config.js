@@ -1,0 +1,46 @@
+const path = require('path')
+module.exports={
+    entry:'./src/main.js',
+    output:{
+        path:path.resolve(__dirname,'dist') ,
+        filename:'bundle.js',
+        publicPath:'dist/'//url图片解析后会自动加上/dist
+    },
+    module:{
+        rules:[
+            {
+                test:/\.css$/,
+                use:['style-loader','css-loader']
+                //css文件
+            },
+            {
+                test:/\.less$/,
+                use:['style-loader','css-loader','less-loader']
+                //less文件
+            },
+            {
+                test:/\.(png|jpg|gif|jpeg)$/,
+                use:[
+                    {//图片
+                        loader:'url-loader',
+                        options:{
+                            limit:13000,
+                            name:'img/[name].[hash:8].[ext]'
+                        },
+                    }
+                ]
+            },
+            {
+                //es6转es5
+                test:/\.js$/,
+                exclude:/(node_modules|bower_components)/,
+                use:{
+                    loader:'babel-loader',
+                    options:{
+                        presets:['es2015']
+                    }
+                }
+            }
+        ]
+    }
+}

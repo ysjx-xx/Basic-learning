@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{firstName+' '+lastName}}</h1>
+        <h1>{{firstName}} {{lastName}}</h1>
+        <h1>{{getFullName()}}</h1>
+        <h1>{{fullName}}</h1>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        let app=new Vue({
+            el:"#app",
+            data:{
+                firstName:"li",
+                lastName:"bolun",
+            },
+            computed:{//计算属性一般没有set方法，只读属性
+                //get function
+                fullName:function(){
+                    return this.firstName+' '+this.lastName
+                }
+
+            },
+        })
+    </script>
+</body>
+</html>

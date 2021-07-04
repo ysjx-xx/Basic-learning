@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+             list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+      <ul>
+          <li v-for="item in arr" :key="item">{{item}}</li>
+          <!-- 更高效的更新虚拟DOM,key:命名要与内容一一对应 -->
+      </ul>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        let app=new Vue({
+            el:"#app",
+            data:{
+                arr:['数据1','数据2','数据3','数据4','数据5']
+            }
+        })
+    </script>
+</body>
+</html>

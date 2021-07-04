@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.null{
+    display: none;
+}
+div{
+    
+    margin:  auto;
+}
+table{
+    
+    text-align: center;
+    border-collapse: collapse
+}
+thead{
+    background-color: darkgray;
+}
+td{
+    border: 1px solid rgb(155, 148, 148);
+    padding: 10px;
+    
+}

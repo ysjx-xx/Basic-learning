@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <mycpn></mycpn>
+    </div>
+    <!--第一种写法
+    <script type="text/x-template" id="cpn">
+      <div>
+          <h1>标题111</h1>
+          <p>内容123123</p>
+      </div>
+    </script> -->
+    <!--第二种写法
+    <template id="cpn">
+      <div>
+        <h1>标题111</h1>
+        <p>内容123123</p>
+      </div>
+    </template> -->
+
+    <script>
+      let app = new Vue({
+        el: "#app",
+        components: {
+          mycpn: {
+            template: "#cpn",
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

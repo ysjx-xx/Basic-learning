@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+    //   new Promise((resolve) => {
+    //     setTimeout(() => {
+    //       resolve("aaa");
+    //     }, 2000)
+    //   }).then((res) => {
+    //     console.log(res + "第一次打印");
+
+
+    //     // return new Promise((resolve) => {
+    //     //   setTimeout(() => {
+    //     //     resolve(res+"bbb");
+    //     //   }, 2000);
+    //     // })
+
+    //     return Promise.resolve(res+'bbb')
+    // }).then((res) => {
+    //       console.log(res + "第二次打印");
+
+          
+    //     //   return new Promise((resolve)=>{
+    //     //       setTimeout(() => {
+    //     //           resolve(res+'ccc')
+    //     //       }, 2000);
+    //     //   })
+
+    //     return Promise.resolve(res+'ccc')})
+    //       .then((res)=>{
+    //           console.log(res+'第三次打印');
+    //       })
+        
+      
+    // new Promise((resolve)=>{
+    //     resolve('aaa')
+    // }).then((res)=>{
+    //     console.log(res+"第一次打印");
+    //     return new Promise((resolve)=>{
+    //         resolve(res+"bbb")
+    //     })
+    // }).then((res)=>{
+    //     console.log(res+'第二次打印');
+    //     return new Promise((resolve)=>{
+    //         resolve(res+'ccc')
+    //     })
+    // }).then((res)=>{
+    //     console.log(res+'第三次打印');
+    // })
+
+
+    // new Promise((resolve)=>{
+    //     resolve('aaa')
+    // }).then((res)=>{
+    //     console.log(res+"第一次打印");
+    //     return Promise.resolve(res+"bbb")
+    // }).then((res)=>{
+    //     console.log(res+'第二次打印');
+    //     return Promise.resolve(res+'ccc')
+    // }).then((res)=>{
+    //     console.log(res+'第三次打印');
+    // })
+    
+    new Promise((resolve)=>{
+        resolve('aaa')
+    }).then((res)=>{
+        console.log(res+"第一次打印");
+        return Promise.resolve(res+"bbb")
+    }).then((res)=>{
+        console.log(res+'第二次打印');
+        return Promise.reject("err message")
+    }).then((res)=>{
+        console.log(res+'第三次打印')
+        return Promise.resolve(res+"ddd")
+    }).then((res)=>{
+        console.log(res+'第四次打印');
+    }).catch((err)=>{
+        console.log(err);
+    })
+
+
+    // new Promise((resolve)=>{
+    //     resolve('aaa')
+    // }).then((res)=>{
+    //     console.log(res+"第一次打印");
+    //     return res+"bbb"
+    // }).then((res)=>{
+    //     console.log(res+'第二次打印');
+    //     return res+'ccc'
+    // }).then((res)=>{
+    //     console.log(res+'第三次打印');
+    // })
+    </script>
+  </body>
+</html>

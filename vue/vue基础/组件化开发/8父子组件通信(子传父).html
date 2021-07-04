@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <cpn @itemclick="cpnclick"></cpn>
+    </div>
+    <template id="cp">
+      <div>
+        <button v-for="item in classies" @click="btnclick(item)">{{item.name}}</button>
+      </div>
+    </template>
+    <script>
+      const cpn ={
+          template:"#cp",
+          data() {
+              return {
+                  classies:[
+                      {id:'1',name:"家电1"},
+                      {id:'2',name:"手机1"},
+                      {id:'3',name:"手机2"},
+                      {id:'4',name:"家电2"},
+                  ]
+              }
+          },
+          methods: {
+              btnclick(item){
+                  this.$emit('itemclick',item)
+              }
+
+          },
+
+      }
+      let app=new Vue({
+          el:"#app",
+          data:{},
+          components:{
+              cpn
+          },
+          methods: {
+              cpnclick(item){
+console.log(item.id);
+              }
+          },
+      })
+    </script>
+  </body>
+</html>

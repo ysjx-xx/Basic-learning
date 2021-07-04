@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <!-- 修饰符作用：
+        .lazy:使双向绑定的数据更新不那么频繁,vue内部已经设置好，
+        在失去焦点或者按enter键盘才更新，v-model.lazy
+        .number:使提交的类型为数字型
+        .trim:去掉字符串两边的空格 -->
+
+    <div id="app">
+<input type="text" v-model.lazy="message">
+<input type="number" v-model.number="number">
+
+<h2>{{message}}</h2>
+<h2>{{number}} {{typeof number}}</h2>
+    </div>
+    <script>
+        let app=new Vue({
+            el:"#app",
+            data:{
+                message:"",
+                number:''
+
+            }
+        })
+    </script>
+</body>
+</html>

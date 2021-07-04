@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">总价格:{{togeprice}}</div>
+    <script src="../js/vue.js"></script>
+    <script>
+        let app=new Vue({
+            el:"#app",
+            data:{
+                vegetables:[
+                    {id:1,name:'青菜',price:5},
+                    {id:2,name:'白菜',price:8},
+                    {id:3,name:'花菜',price:7},
+                    {id:4,name:'紫菜',price:3}
+                ]
+            },
+            computed:{
+                // togeprice:function(){
+                //     let sum=0;
+                //     for(let i=0;i<this.vegetables.length;i++){
+                //         sum+=this.vegetables[i].price;
+                //     }
+                //     return sum;
+                // }
+                // togeprice:function(){
+                //     let sum=0;
+                //     for(let i in this.vegetables){
+                //         sum+=this.vegetables[i].price;
+                //     }
+                //     return sum
+                // }
+                togeprice:function(){
+                    let sum=0;
+                    for(let i of this.vegetables){
+                        sum+=i.price;
+                    }
+                    return sum;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+div{
+    height: 300px;
+    width: 300px;
+    background-color: pink;
+}
+.box1{
+    background-image: url('../img/p1.jpg');
+}
+.box2{
+    background-image: url('../img/p2.jpg');
+}
+.box3{
+    background-image: url('../img/p3.jpg');
+}

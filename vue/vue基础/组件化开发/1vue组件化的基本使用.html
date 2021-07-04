@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./vue.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>标题</h1>
+      <h2>二级标题</h2>
+      <h3>三级标题</h3>
+    </div>
+
+    <div id="app">
+        <my-zujian></my-zujian>
+        <my-zujian></my-zujian>
+        <my-zujian></my-zujian>
+        <my-zujian></my-zujian>
+    </div>
+    <!-- 创建组件： -->
+    
+    <script>
+      const zujian=Vue.extend({
+          template:`<div>
+      <h1>标题</h1>
+      <h2>二级标题</h2>
+      <h3>三级标题</h3>
+    </div>`
+      })
+      Vue.component('my-zujian',zujian)
+      let app = new Vue({
+        el: "#app",
+        data: {},
+      });
+    </script>
+  </body>
+</html>

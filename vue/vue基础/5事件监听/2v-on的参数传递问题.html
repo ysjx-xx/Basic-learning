@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button @click="btn1">按钮1</button>
+        <button @click="btn2()">按钮2</button>
+        <button @click="btn3">按钮3</button>
+        <button @click="btn4('abcsddw')">按钮4</button>
+        <button @click="btn5(123,12,$event)">按钮5</button>
+        
+
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        let app=new Vue({
+            el:"#app",
+            data:{
+                
+            },
+            methods:{
+                btn1(){
+                    console.log(1);
+                },
+                btn2(){
+                    console.log(2);
+                },
+                btn3(a){
+                    console.log(a);
+                },
+                btn4(ab){
+                    console.log(ab);
+                },
+                btn5(abc,de,event){
+                    console.log(abc,de,event);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

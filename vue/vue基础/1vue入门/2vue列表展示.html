@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for='item in movie'>{{item}}</li>
+        </ul>
+    </div>
+    <div id="func">
+        <h1>{{message}}</h1>
+        <span v-for='item in huodong'>--{{item}}--</span>
+    </div>
+    <script>
+        const app=new Vue({
+            el:'#app',
+            data:{
+                movie:[
+                    '海王',
+                    '狼王',
+                    '狗王',
+                    '虎王'
+                ]
+            }
+        })
+        const func=new Vue({
+            el:'#func',
+            data:{
+                message:'猪',
+                huodong:['吃','睡','玩']
+            }
+            
+        })
+    </script>
+    
+</body>
+</html>

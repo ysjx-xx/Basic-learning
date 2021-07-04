@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <!-- 从网络获取或者写在data中的数据，进行一个动态绑定，然后再双向绑定 -->
+    <div id="app">
+        <label v-for="item in message" :for="item">
+            <input type="checkbox" :value="item" :id="item" v-model="hobby">{{item}}
+        </label>
+        <h2>{{hobby}}</h2>
+    </div>
+    <script>
+        let app=new Vue({
+            el:"#app",
+            data:{
+                message:['1','2','3','4','5'],
+                hobby:[]
+            }
+        })
+    </script>
+</body>
+</html>

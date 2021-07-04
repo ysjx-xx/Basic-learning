@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+        <cpn ref="cpn1"></cpn>
+        <button @click="btnClick">按钮</button>
+    </div>
+    <template id="cp">
+      <div>
+        <h2>子组件</h2>
+      </div>
+    </template>
+    <script>
+      const cpn = {
+        template: "#cp",
+        data() {
+            return {
+                name:"li"
+            }
+        },
+        methods: {
+          show() {
+            console.log("访问");
+          },
+        },
+      };
+      let app = new Vue({
+        el: "#app",
+        components: {
+          cpn,
+        },
+        methods: {
+            btnClick(){
+               this.$refs.cpn1.show();
+               console.log(this.$refs.cpn1.name);
+            }
+        },
+      });
+    </script>
+  </body>
+</html>

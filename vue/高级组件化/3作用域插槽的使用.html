@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <cpn>
+        <template v-slot="slot"> 
+            <!-- slot-scope也可 -->
+          <!-- <span  v-for="item in slot.data" >{{item}}-</span> -->
+          <span>{{slot.data.join("|")}}</span>
+        </template>
+      </cpn>
+    </div>
+    <template id="cpn">
+      <div>
+        <slot :data="fruit">
+          <ul>
+            <li v-for="item in fruit">{{item}}</li>
+          </ul>
+        </slot>
+      </div>
+    </template>
+    <script>
+      const cpn = {
+        template: "#cpn",
+        data() {
+          return {
+            fruit: ["水果", "水果", "水果", "水果", "水果", "水果"],
+          };
+        },
+      };
+      let app = new Vue({
+        el: "#app",
+        data: {},
+        components: {
+          cpn,
+        },
+      });
+    </script>
+  </body>
+</html>

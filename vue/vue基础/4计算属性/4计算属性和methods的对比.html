@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{firstName+' '+lastName}}</h1>
+        <h1>{{firstName}} {{lastName}}</h1>
+        <h1>{{getFullName()}}</h1>
+        <h1>{{getFullName()}}</h1>
+        <h1>{{getFullName()}}</h1>
+        <h1>{{getFullName()}}</h1>
+        <h1>{{getFullName()}}</h1>
+        <h1>{{getFullName()}}</h1>
+        <h1>{{fullName}}</h1>
+        <h1>{{fullName}}</h1>
+        <h1>{{fullName}}</h1>
+        <h1>{{fullName}}</h1>
+        <h1>{{fullName}}</h1>
+        <h1>{{fullName}}</h1>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        let app=new Vue({
+            el:"#app",
+            data:{
+                firstName:"li",
+                lastName:"bolun",
+            },
+            computed:{
+                fullName:function(){
+                    console.log('计算属性打印次数');
+                    return this.firstName+' '+this.lastName
+                }
+//多次使用时,方法调用多次，计算属性只调用一次
+            },
+            methods:{
+                getFullName:function(){
+                    console.log('方法打印次数');
+                    return this.firstName+' '+this.lastName
+                }
+            }
+        })
+    </script>
+</body>
+</html>

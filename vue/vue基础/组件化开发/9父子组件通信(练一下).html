@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <cpn :cfruit="fruit" @itemclick="cpnclick"></cpn>
+    </div>
+    <template id="cpp">
+      <div>
+        <button v-for="item in cfruit" @click="btnclick(item)">
+          {{item.name}}
+        </button>
+      </div>
+    </template>
+    <script>
+      const cpn = {
+        template: "#cpp",
+        props: {
+          cfruit: {
+            type: Array,
+            default: "数据出错",
+          },
+        },
+        data() {
+          return {};
+        },
+        methods: {
+          btnclick(item) {
+            this.$emit("itemclick", item);
+          },
+        },
+      };
+      let app = new Vue({
+        el: "#app",
+        data: {
+          fruit: [
+            { id: 1, name: "苹果" },
+            { id: 2, name: "香蕉" },
+            { id: 3, name: "葡萄" },
+            { id: 4, name: "西瓜" },
+          ],
+        },
+        components: {
+          cpn,
+        },
+        methods: {
+          cpnclick(item) {
+            console.log(item.id);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

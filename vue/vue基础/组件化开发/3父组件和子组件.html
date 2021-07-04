@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+        <fuzujian></fuzujian>
+    </div>
+    <script>
+      const cpnC1 = Vue.extend({
+        template: `<div>
+    <h1>标题111</h1>
+    <p>内容123123</p>
+</div>`,
+      });
+      const cpnC2 = Vue.extend({
+        template: `<div>
+    <h1>标题222</h1>
+    <p>内容123123</p>
+    <zizujian></zizujian>
+</div>
+`
+,
+//在父组件中注册并且使用子组件,然后将父组件注册，再使用父组件，父组件中就会包含子组件，
+// 但不能直接使用子组件(因为没有注册)
+components:{
+    zizujian:cpnC1
+}
+      });
+
+      let app = new Vue({
+        el: "#app",
+        data: {},
+        components: {
+            fuzujian:cpnC2
+        },
+      });
+    </script>
+  </body>
+</html>

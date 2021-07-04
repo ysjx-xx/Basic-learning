@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <img v-bind:src="imgurl" alt="">
+        <img :src="imgurl" alt="">
+        <a v-bind:href="aherf">链接</a>
+      </div>
+      <script src="../js/vue.js"></script>
+      <script>
+        let app = new Vue({
+          el: "#app",
+          data: {
+            message: "你好",
+            imgurl:'https://cn.vuejs.org/images/logo.svg',
+            aherf:'https://github.com/'
+          }
+        });
+      </script>
+</body>
+</html>

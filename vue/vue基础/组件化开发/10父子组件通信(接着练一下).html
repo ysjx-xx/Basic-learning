@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <cpn
+        :cnum1="num1"
+        :cnum2="num2"
+        @sinput1="ssinput1"
+        @sinput2="ssinput2"
+      />
+    </div>
+    <template id="tem">
+      <div>
+        <h2>props:{{cnum1}}</h2>
+        <h2>data:{{ccnum1}}</h2>
+        <input type="text" v-model:value="ccnum1"
+
+          />
+          <!-- @input="ccnum1input" -->
+          <!-- 用watch写直接写v-model,去掉v-on -->
+        <h2>props:{{cnum2}}</h2>
+        <h2>data:{{ccnum2}}</h2>
+        <input type="text" v-model:value="ccnum2" 
+         />
+         <!-- @input="ccnum2input" -->
+         
+      </div>
+    </template>
+    <script>
+      const cpn = {
+        template: "#tem",
+        props: {
+          cnum1: {
+            type: Number,
+          },
+          cnum2: {
+            type: Number,
+          },
+        },
+        data() {
+          return {
+            ccnum1: this.cnum1,
+            ccnum2: this.cnum2,
+          };
+        },
+        watch:{
+            ccnum1(newValue){
+this.$emit("sinput1",newValue)
+            },
+            ccnum2(newValue){
+                this.$emit("sinput2",newValue)
+            }
+
+        },
+        // methods: {
+        //   ccnum1input(event) {
+        //     this.ccnum1 = event.target.value;
+        //    this.$emit("sinput1", this.ccnum1);可以用watch来写
+        //   },
+        //   ccnum2input(event) {
+        //     this.ccnum2 = event.target.value;
+        //    this.$emit("sinput2", this.ccnum2);
+        //   },
+        // },
+      };
+      let app = new Vue({
+        el: "#app",
+        data: {
+          num1: 1,
+          num2: 2,
+        },
+        components: {
+          cpn,
+        },
+        methods: {
+          ssinput1(value) {
+            this.num1 = parseFloat(value) ;
+          },
+          ssinput2(value) {
+            this.num2 = parseFloat(value);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
