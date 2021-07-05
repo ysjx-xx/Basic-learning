@@ -1,0 +1,30 @@
+﻿console.log（）点三角形展开时会重新读取数据当前属性，显示的是点开时展示的属性而不是执行console.log（）时的属性；解决方法：用console.log（JSON.stringify（obj））以字符串方式输出。
+抽时间学习一下深克隆写法
+MVVM维基百科搜索
+js记得放在html之后，或者加window.onload
+
+
+时刻考虑加不加this
+返回结果写在循环外面
+明天看一下数组reduce方法
+css-loader安装失败解决：npm install --legacy-peer-deps css-loader@2.0.2 --save-dev
+
+npm install --legacy-peer-deps  file-loader@3.0.1 --save-dev
+
+
+cnpm install --legacy-peer-deps --save-dev vue-loader@15.4.2 vue-template-compiler@2.5.21
+
+路由重复报错时：const originalPush = Router.prototype.push;
+Router.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err);
+}
+vue-router@3.1.1后已修复
+
+vue-cli2创建:vue init webpack 项目名
+
+
+npm install vuex --save 安装vuex
+浏览器装Devtools插件：极简插件里面下载
+
+基础阶段结束，跟着做项目之后学习
+node typescript
